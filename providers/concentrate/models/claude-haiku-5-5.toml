@@ -12,12 +12,12 @@ sdk = { aisdk = "@ai-sdk/anthropic", opencodeai = "@opencode/ai/providers/anthro
 
 [cost.text.input]
 price = 0.1
-cache = { read = 0.01, write = { "5m" = 0.125, "1h" = 0.2 } }
+cache = { read = 0.01, write = { "1h" = 0.2, "5m" = 0.125 } }
 
 [[cost.text.input.overrides]]
 when = { context = { gte = 100_001 } }
 price = 0.5
-cache = { read = 0.05, write = { "5m" = 0.625, "1h" = 1 } }
+cache = { read = 0.05, write = { "1h" = 1, "5m" = 0.625 } }
 
 [cost.text.output]
 price = 0.5
